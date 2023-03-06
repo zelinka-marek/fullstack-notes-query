@@ -1,3 +1,24 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "content": "new note",
+      "important": false,
+      "id": 1
+    },
+    {
+      "content": "new note 2",
+      "important": true,
+      "id": 2
+    },
+    {
+      "content": "asfasf",
+      "important": true,
+      "id": 3
+    },
+    {
+      "content": "asfasfasf",
+      "important": true,
+      "id": 4
+    }
+  ]
 }
