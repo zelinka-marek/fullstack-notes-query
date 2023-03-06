@@ -1,5 +1,8 @@
+import { useQuery } from "react-query";
+import { getNotes } from "./requests";
+
 export function App() {
-  const notes = [];
+  const notesResult = useQuery("notes", getNotes);
 
   const addNote = (event) => {
     event.preventDefault();
@@ -25,8 +28,12 @@ export function App() {
         <input type="text" name="note" required aria-label="New note" />
         <button type="submit">Save</button>
       </form>
-      {notes.length ? (
-        notes.map((note) => (
+      {notesResult.isLoading ? (
+        <p>
+          <i>Loading notes..</i>
+        </p>
+      ) : notesResult.data.length ? (
+        notesResult.data.map((note) => (
           <li key={note.id}>
             {note.content}{" "}
             <button onClick={() => toggleImportance(note.id)}>
